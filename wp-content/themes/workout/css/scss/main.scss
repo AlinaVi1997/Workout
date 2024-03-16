@@ -1,0 +1,25 @@
+/*
+** plugins loaded first
+*/
+
+//main
+@import 'parts/main/general';
+@import 'parts/main/header';
+@import 'parts/main/footer';
+@import 'parts/main/home';
+@import 'parts/components/mb-menu';
+
+//settings
+@import 'parts/settings/color';
+
+//media query
+@import 'parts/settings/mixin';
+
+//flex
+@import 'parts/settings/flex';
+
+//margin sections
+@import 'parts/settings/utilites';
+
+//variables
+@import 'parts/settings/variables';

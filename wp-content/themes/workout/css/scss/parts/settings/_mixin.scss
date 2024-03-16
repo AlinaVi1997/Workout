@@ -1,0 +1,27 @@
+@mixin break($point) {
+  @if $point == 'min1920' {
+    @media only screen and (min-width: 1920px) { @content; }
+  }
+  @else if $point == 991 {
+    @media only screen and (max-width: 991px) { @content; }
+  }
+  @else if $point == 768 {
+    @media only screen and (max-width: 768px) { @content; }
+  }
+  @else if $point == 690 {
+    @media only screen and (max-width: 690px) { @content; }
+  }
+  @else if $point == 653 {
+    @media only screen and (max-width: 653px) { @content; }
+  }
+  @else if $point == 595 {
+    @media only screen and (max-width: 595px) { @content; }
+  }
+  @else if $point == 473 {
+    @media only screen and (max-width: 473px) { @content; }
+  }
+  @else if $point == 375 {
+    @media only screen and (max-width: 375px) { @content; }
+  }
+}
+

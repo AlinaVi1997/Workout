@@ -1,0 +1,177 @@
+@import "../settings/color";
+@import "../settings/mixin";
+
+.footer{
+    &__inner{
+        @extend %flex-container;
+        justify-content: space-between;
+        border-top:1px solid $color-light;
+        border-bottom:1px solid $color-light;
+        padding: 36px 0 15px 0;
+        @include break(768){
+            justify-content: space-around;
+            row-gap: 30px;
+        }
+        @include break(375) {
+            row-gap: 25px;
+            padding: 35px 0;
+        }
+    }
+    &__logo {
+        margin-bottom: 15px;
+        img{
+            @include break(768) {
+                max-width: 150px;
+            }
+        }
+    }
+    &__block{
+        @include break(768) {
+            text-align: center;
+        }
+        p{
+            font-size: 12px;
+            line-height: normal;
+            margin-bottom: 15px;
+            @include break(375) {
+                margin-bottom: 25px;    
+            }
+        }
+    }
+    &__social{
+        @extend %flex-container;
+        gap: 10px;
+        @include break(768) {
+                justify-content: center
+            }
+    }
+    &__icon_link{
+        background-color:$color-brown;
+        border-radius: 50%;
+        padding: 10px;
+        transition: all .3s;
+         border: 1px solid transparent;
+        &:hover{
+            background-color: $color-primary;
+        }
+        &:active{
+            border:1px solid $color-white;
+        }
+    }
+    &__nav_menu_items{
+        @extend %flex-container;
+        gap: 50px;
+        align-items: baseline;
+        @include break(768) {
+                order: 3;
+        }
+    }
+    &__nav_menu_title{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+    &__nav_menu{
+        padding-bottom: 15px;
+        a{
+            &:hover{
+            border-bottom: 5px solid $color-brown;
+            padding-bottom: 5px;
+            }
+        }
+    }
+    &__form{
+        max-width: 321px;
+        @include break(653) {
+            text-align: center;
+            }
+        p:nth-child(1){
+            font-size: 18px;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+    }
+    &__copyright{
+        @extend %flex-container;
+        justify-content: space-between;
+        padding: 35px 0;
+        @include break(473) {
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        p{
+            font-size: 12px;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+}
+
+///Form ////////////
+.wpcf7-email{
+    color:$color-placeholder;
+    padding: 8px 26px;
+    font-size: 13px;
+    line-height: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 30px;
+    @include break(653) {
+            text-align: center;
+        }
+}
+.wpcf7-email::placeholder{
+    color:$color-placeholder;
+}
+.wpcf7-submit{
+    @extend %button-cards;
+    font-weight: 600;
+    @include break(653){
+        margin: 0 auto;
+    }
+    &:hover{
+        background-color: $color-white;
+        color:$color-primary;
+    }
+    &:active{
+        transform: translateY(3px);
+    }
+}
+.wpcf7-response-output{
+    position: relative;
+    top: -60px;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output{
+    border-color: transparent;
+    border:none;
+    margin: 0;
+    padding: 0;
+    color:rgb(146, 16, 16);
+    max-width: 321px;
+    font-size: 13px;
+}
+.wpcf7 form.sent .wpcf7-response-output{
+    border-color: transparent;
+    margin: 0;
+    padding: 0;
+    border:none;
+    color:#21972b;
+}
+.wpcf7-not-valid-tip {
+    display: none;
+}
+.form-control:focus {
+    color: $color-placeholder;
+    background-color: $color-white;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}

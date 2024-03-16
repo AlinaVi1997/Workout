@@ -1,0 +1,36 @@
+///line for title
+%line {
+    content: "";
+    top: 50px;
+    position: absolute;
+    width: 73px;
+    height: 5px;
+    background-color: $color-brown;
+}
+///buttons for cards
+%button-cards {
+    text-transform: uppercase;
+    background-color: $color-primary;
+    padding: 8px 16px;
+    display: block;
+    border-radius: 5px;
+    color: $color-white;
+    border: 1px solid transparent;
+}
+
+// Teams mobile name
+%team_mobile_name{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    color: $color-white;
+    transform: translate(-50%, -50%);
+    bottom: -33px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+}

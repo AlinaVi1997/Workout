@@ -1,0 +1,153 @@
+@import "../settings/color";
+@import "../settings/mixin";
+@import "../settings/flex";
+
+//burger menu//
+.menu-btn {
+    display: none;
+    width: 30px;
+    height: 20px;
+    flex-direction: column;
+    gap: 7px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 0;
+    @include break(991){
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    span {
+        width: 100%;
+        height: 2px;
+        background-color: $color-white;
+        &:after,
+        &:before{
+            content: "";
+            width: 100%;
+            background-color: $color-white;
+            display: block;
+            transition: all 0.3s ease-in-out;
+            height: 2px;
+        }
+        &:before {
+            transform: translateY(-10px);
+        }
+        &:after {
+            transform: translateY(10px);
+            margin-top: -2px;
+        }
+    }
+}
+
+//close btn//
+.close-btn {
+    position: fixed;
+    right: 20px;
+    span { 
+        background-color: transparent;
+        &>*{
+            @include break(991){
+                background-color: $color-white;
+            }
+        }
+        &::before{
+            transform: rotateZ(45deg) translateY(0);
+        }
+        &::after{
+        transform: rotateZ(-45deg) translateY(0);
+        }
+    }
+}   
+
+// backdrop//
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #fff0;
+    backdrop-filter: blur(5px);
+    transition: all 0.7s ease;
+    transform: translateX(101%);
+    right: 0;
+}
+
+.mobile-menu-visible {
+    overflow: hidden;
+    .menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.7s ease;
+        -moz-transition: all 0.7s ease;
+        -ms-transition: all 0.7s ease;
+        -o-transition: all 0.7s ease;
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+    }
+}
+///end background ////
+
+//mobile navbar menu header//
+.header{
+    &__navbar-menu{
+        opacity: 1;
+        visibility: visible;
+        @include break(991){
+            position: fixed;
+            transform: translateX(100%);
+            transition: all .7s ease;
+            top: 15px;
+            right: 0;
+            width: 143px;
+            height: 250px;
+            background-color: #59253e;
+            padding: 30px 14px 19px 19px;
+            z-index: 2;
+            opacity: 1;
+            visibility: visible;
+            border-radius: 20px 0 0 20px;  
+        }
+    }
+    &__list_nav-menu{
+        @include break(991){
+            justify-content: center;
+            gap: 15px;
+        }
+    }
+    &__item-nav_menu{
+        a{
+            @include break (991){
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__login-btn{
+        a{
+            @include break (991){
+                font-size: 12px;
+            }
+        }
+    }
+}
+.mobile__header__navbar-menu {
+    display: none !important;
+    li:nth-child(4) {
+        padding-bottom: 30px;
+    }
+    @include break(991) {
+        display: block !important;
+    }
+}
+
+//active//
+.menu--active {
+    @include break(991){
+        transform: translateX(0%);
+        z-index: 2;
+    }
+}

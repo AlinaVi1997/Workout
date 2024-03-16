@@ -1,0 +1,67 @@
+@import "../settings/color";
+@import "../settings/mixin";
+@import "../settings/flex";
+
+.header{
+    padding-top: 65px;
+    margin-bottom: 60px;
+    color:$color-light;
+    @include break(768){
+        padding-top: 35px;
+        margin-bottom: 30px;
+    }
+    @include break(375){
+        padding-top: 15px;
+    }
+    &__inner{
+        @extend %flex-container-center;
+        justify-content: space-between;
+    }
+    &__logo{
+        img{
+            @include break(768){
+                max-width: 107px;
+            }
+        }
+    }
+    &__navbar-menu{
+        @extend %flex-container;
+        gap: 64px;
+        @include break(991){
+            display: none;
+        }
+    }
+    &__list_nav-menu{
+        @extend %flex-container;
+        gap: 58px;
+    }
+    &__item-nav_menu_active{
+        border-bottom: 3px solid $color-brown;
+        padding-bottom: 3px;
+    }
+    &__item-nav_menu{
+        a{
+        font-weight: 300;
+            border-bottom: 5px solid transparent;
+            &:hover{
+                border-bottom-width: 5px;
+                color:$color-light;
+                border-bottom: 5px solid $color-brown;
+                padding-bottom: 5px;
+            }          
+        } 
+    }
+    &__login-btn{
+        text-transform: uppercase;
+        a:nth-child(1){
+            background-color: $color-primary;
+            border: 1px solid $color-primary;
+            padding: 0 8px;
+            margin-right: -4px;
+        }
+        a:nth-child(2){
+           padding: 0 4px;
+            border: 1px solid $color-light;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+@import "../settings/color";
+@import "../settings/mixin";
+
+//Typography
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-Bold.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-BoldItalic.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-SemiBold.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-SemiBoldItalic.woff2") format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-Medium.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/wp-content/themes/workout/fonts/Poppins-Regular.woff2") format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url("/fonts/Poppins-Light.woff2") format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: $color-dark;
+    color: $color-white;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.container-fluid {
+    max-width: 1164px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include break(375) {
+        padding: 0 12px;
+    }
+}
+
+a:focus {
+    outline: none;
+}
+a:hover{
+    color:$color-light;
+}
+p:empty {
+    display: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color:inherit;
+}
+img{
+    height: auto;
+    width: auto;
+}
+a{
+    border: 1px solid transparent;
+}
+a:hover {
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+a:active {
+    transform: translateY(4px);
+}
+strong {
+    font-weight: bold;
+}
+body {
+    min-height: 100%;
+    line-height: 1.5;
+}
+
+svg *[fill] {
+    fill: currentColor
+}
+
+svg *[stroke] {
+    stroke: currentColor
+}
+
+svg * {
+    transition-property: fill, stroke;
+}
